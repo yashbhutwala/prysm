@@ -15,6 +15,17 @@ config_setting(
 )
 
 config_setting(
+    name = "darwin_arm64",
+    constraint_values = [
+        "@platforms//os:osx",
+        "@platforms//cpu:aarch64",
+    ],
+    values = {
+        "define": "blst_disabled=false",
+    },
+)
+
+config_setting(
     name = "darwin_amd64",
     constraint_values = [
         "@platforms//os:osx",
@@ -79,6 +90,7 @@ go_library(
                 ":linux_amd64",
                 ":linux_arm64",
                 ":darwin_amd64",
+                ":darwin_arm64",
                 ":windows_amd64",
                 ":android_amd64",
                 ":android_arm64",
@@ -102,6 +114,7 @@ go_library(
         (
             ":linux_amd64",
             ":linux_arm64",
+            ":darwin_arm64",
             ":darwin_amd64",
             ":windows_amd64",
             ":android_amd64",
@@ -127,6 +140,7 @@ go_test(
             ":linux_amd64",
             ":linux_arm64",
             ":darwin_amd64",
+            ":darwin_arm64",
             ":windows_amd64",
             ":android_amd64",
             ":android_arm64",
@@ -141,6 +155,7 @@ go_test(
             ":linux_amd64",
             ":linux_arm64",
             ":darwin_amd64",
+            ":darwin_arm64",
             ":windows_amd64",
             ":android_amd64",
             ":android_arm64",
@@ -163,6 +178,7 @@ go_test(
             ":linux_amd64",
             ":linux_arm64",
             ":darwin_amd64",
+            ":darwin_arm64",
             ":windows_amd64",
             ":android_amd64",
             ":android_arm64",
@@ -177,6 +193,7 @@ go_test(
             ":linux_amd64",
             ":linux_arm64",
             ":darwin_amd64",
+            ":darwin_arm64",
             ":windows_amd64",
             ":android_amd64",
             ":android_arm64",
